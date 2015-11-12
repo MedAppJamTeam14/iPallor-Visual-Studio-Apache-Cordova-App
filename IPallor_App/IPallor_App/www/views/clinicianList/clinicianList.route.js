@@ -2,9 +2,9 @@
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('ClinicianAdd', {
-      url: '/page1',
-      templateUrl: '../../templates/iPallor.html',
-      controller: 'Clinician.AddCtrl'
+    .state('ClinicianList', {
+      url: '/clinicianList',
+      templateUrl: 'views/clinicianList/clinicianList.html',
+      controller: 'Clinician.ListCtrl'
     });
 });

@@ -4,7 +4,7 @@ angular.module('app', [
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/page1');
+  $urlRouterProvider.otherwise('/clinicianList');
 
 })
 
