@@ -3,13 +3,16 @@
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="Search Clinician">
+                <input
+                    type="search"
+                    ng-model="searchClinicians"
+                    placeholder="Search Clinician">
             </label>
         </form>
         <ion-list>
             <ion-item
-                ng-repeat="clinician in vm.clinicians"
-                ng-click="vm.login(clinician)"
+                ng-repeat="clinician in vm.clinicians | filter:searchClinicians"
+                ng-click="vm.selectClinician(clinician)"
                 href="#/patientList"
             >
                 {{ clinician }}

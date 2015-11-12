@@ -5,7 +5,7 @@
 
   angular.extend(vm, {
     clinicians: ClinicianFactory.getClinicians(),
-    login: ClinicianFactory.login
+    selectClinician: ClinicianFactory.selectClinician
   });
 
 });

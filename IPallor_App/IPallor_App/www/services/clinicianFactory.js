@@ -9,7 +9,6 @@
 
   var currentClinician;
 
-
   return {
     getClinicians: function () {
       return clinicians;
@@ -19,7 +18,7 @@
       return currentClinician;
     },
 
-    login: function (selectedClinician) {
+    selectClinician: function (selectedClinician) {
       currentClinician = selectedClinician;
     }
   }

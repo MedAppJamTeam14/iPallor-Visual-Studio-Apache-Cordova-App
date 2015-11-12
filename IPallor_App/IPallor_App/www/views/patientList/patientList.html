@@ -3,12 +3,12 @@
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="Search Patient">
+                <input type="search" ng-model="searchPatients" placeholder="Search Patient">
             </label>
         </form>
         <ion-list>
             <ion-item
-                ng-repeat="patient in vm.patients"
+                ng-repeat="patient in vm.patients | filter:searchPatients"
                 ng-click="vm.selectPatient(patient)"
                 href="#/patientDetails"
             >
