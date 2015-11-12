@@ -5,6 +5,6 @@
     .state('PatientDetails', {
       url: '/patientDetails',
       templateUrl: 'views/patientDetails/patientDetails.html',
-      controller: 'PatientDetailsCtrl as vm'
+      controller: 'Patient.DetailsCtrl as vm'
     });
 });

@@ -5,6 +5,7 @@
 
   angular.extend(vm, {
     clinicians: ClinicianFactory.getClinicians(),
+
     selectClinician: ClinicianFactory.selectClinician
   });
 

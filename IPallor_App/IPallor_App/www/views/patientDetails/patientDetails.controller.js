@@ -1,5 +1,5 @@
 ﻿angular.module('app')
-.controller('PatientDetailsCtrl', function (PatientFactory) {
+.controller('Patient.DetailsCtrl', function (PatientFactory) {
 
   var vm = this;
 
