@@ -1,4 +1,4 @@
 ﻿angular.module('app')
-  .controller('iPallorCtrl', function ($scope) {
+.controller('Clinician.ListCtrl', function ($scope) {
 
-  });
+});

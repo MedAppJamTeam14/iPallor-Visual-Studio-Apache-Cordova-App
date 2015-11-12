@@ -1,4 +1,4 @@
 ﻿angular.module('app')
-  .controller('addPatientCtrl', function ($scope) {
+.controller('Patient.AddCtrl', function ($scope) {
 
-  });
+});

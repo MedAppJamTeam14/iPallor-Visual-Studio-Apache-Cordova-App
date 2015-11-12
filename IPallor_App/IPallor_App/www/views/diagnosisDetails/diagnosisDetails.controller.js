@@ -1,8 +1,8 @@
 ﻿angular.module('app')
-  .controller('diagnosisDetailsCtrl', function ($scope) {
+.controller('DiagnosisDetails.DetailsCtrl', function ($scope) {
 
-  })
+})
 
-  .controller('dataPointsCtrl', function ($scope) {
+.controller('DiagnosisDetails.DataPointsCtrl', function ($scope) {
 
-  });
+});

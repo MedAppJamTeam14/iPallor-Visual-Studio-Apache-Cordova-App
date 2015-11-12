@@ -2,9 +2,9 @@
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('iPallor', {
+    .state('TakePicture', {
       url: '/page1',
       templateUrl: '../../templates/iPallor.html',
-      controller: 'iPallorCtrl'
+      controller: 'Take.PictureCtrl'
     });
 });

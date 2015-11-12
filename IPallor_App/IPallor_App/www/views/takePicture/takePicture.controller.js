@@ -1,4 +1,4 @@
 ﻿angular.module('app')
-  .controller('iPallorCtrl', function ($scope) {
+.controller('Take.PictureCtrl', function ($scope) {
 
-  });
+});

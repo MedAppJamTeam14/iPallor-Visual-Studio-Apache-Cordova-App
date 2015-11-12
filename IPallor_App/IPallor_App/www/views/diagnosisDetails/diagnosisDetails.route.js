@@ -2,28 +2,28 @@
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('diagnosisTabsController', {
+    .state('DiagnosisDetails', {
       url: '/page12',
       abstract: true,
       templateUrl: 'views/diagnosisDetails/diagnosisTabsController.html'
     })
 
-    .state('diagnosisTabsController.diagnosisDetails', {
+    .state('DiagnosisDetails.Details', {
       url: '/page7',
       views: {
         'tab3': {
           templateUrl: 'views/diagnosisDetails/diagnosisDetails.html',
-          controller: 'diagnosisDetailsCtrl'
+          controller: 'DiagnosisDetails.DetailsCtrl'
         }
       }
     })
 
-    .state('diagnosisTabsController.dataPoints', {
+    .state('DiagnosisDetails.DataPoints', {
       url: '/page6',
       views: {
         'tab4': {
           templateUrl: 'views/diagnosisDetails/dataPoints.html',
-          controller: 'dataPointsCtrl'
+          controller: 'DiagnosisDetails.DataPointsCtrl'
         }
       }
     });

@@ -1,4 +1,4 @@
 ﻿angular.module('app')
-  .controller('uploadCtrl', function ($scope) {
+.controller('Process.PictureCtrl', function ($scope) {
 
-  });
+});

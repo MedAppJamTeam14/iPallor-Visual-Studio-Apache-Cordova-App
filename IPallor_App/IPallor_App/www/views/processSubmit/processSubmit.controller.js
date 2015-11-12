@@ -1,4 +1,4 @@
 ﻿angular.module('app')
-  .controller('confirmSubmissionCtrl', function ($scope) {
+.controller('Process.SubmitCtrl', function ($scope) {
 
-  });
+});

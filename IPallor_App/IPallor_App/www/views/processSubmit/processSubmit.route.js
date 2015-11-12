@@ -2,9 +2,9 @@
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('confirmSubmission', {
+    .state('ProcessSubmit', {
       url: '/page10',
       templateUrl: 'views/processSubmit/processSubmit.html',
-      controller: 'confirmSubmissionCtrl'
+      controller: 'Process.SubmitCtrl'
     });
 });

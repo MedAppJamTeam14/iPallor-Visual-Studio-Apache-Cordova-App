@@ -2,9 +2,9 @@
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('addPatient', {
+    .state('PatientAdd', {
       url: '/page9',
       templateUrl: 'views/patientAdd/patientAdd.html',
-      controller: 'addPatientCtrl'
+      controller: 'Patient.AddCtrl'
     });
 });

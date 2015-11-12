@@ -1,4 +1,4 @@
 ﻿angular.module('app')
-  .controller('diagnosisHistoryCtrl', function ($scope) {
+.controller('DiagnosisListCtrl', function ($scope) {
 
-  });
+});
