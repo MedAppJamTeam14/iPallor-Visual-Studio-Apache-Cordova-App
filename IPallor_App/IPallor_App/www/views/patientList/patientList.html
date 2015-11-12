@@ -7,9 +7,13 @@
             </label>
         </form>
         <ion-list>
-            <ion-item href="#/patientDetails">Max Paulus</ion-item>
-            <ion-item>Van Nguyen</ion-item>
-            <ion-item>John Collins</ion-item>
+            <ion-item
+                ng-repeat="patient in vm.patients"
+                ng-click="vm.selectPatient(patient)"
+                href="#/patientDetails"
+            >
+              {{ patient }}
+            </ion-item>
         </ion-list>
         <a href="#/patientAdd" class="button button-balanced button-block  icon-left ion-android-person-add">Add Patient</a>
     </ion-content>

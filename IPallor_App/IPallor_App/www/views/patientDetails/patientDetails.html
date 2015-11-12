@@ -1,15 +1,17 @@
 <ion-view title="Patient Info">
     <ion-content padding="true" class="has-header">
-        <h1>Max Paulus</h1>
         <ion-list>
             <label class="item item-input">
-                <span class="input-label">Age: 21</span><textarea placeholder=""> </textarea>
+              <span class="input-label">Name: {{ vm.currentPatient.name }}</span>
             </label>
             <label class="item item-input">
-                <span class="input-label">Gender: male</span><textarea placeholder=""> </textarea>
+                <span class="input-label">Age: {{ vm.currentPatient.age }}</span>
             </label>
             <label class="item item-input">
-                <span class="input-label">Phone: 949-555-1234</span><textarea placeholder=""> </textarea>
+                <span class="input-label">Gender: {{ vm.currentPatient.gender }}</span>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Phone: {{ vm.currentPatient.phone }}</span>
             </label>
         </ion-list>
         <a href="#/diagnosisList" class="button button-stable button-block  icon-right ion-android-clipboard">Diagnosis History</a>

@@ -5,6 +5,6 @@
     .state('PatientList', {
       url: '/patientList',
       templateUrl: 'views/patientList/patientList.html',
-      controller: 'Patient.ListCtrl'
+      controller: 'Patient.ListCtrl as vm'
     });
 });
