@@ -3,7 +3,7 @@
 
   $stateProvider
     .state('PatientDetails', {
-      url: '/page2',
+      url: '/patientDetails',
       templateUrl: 'views/patientDetails/patientDetails.html',
       controller: 'PatientDetailsCtrl'
     });

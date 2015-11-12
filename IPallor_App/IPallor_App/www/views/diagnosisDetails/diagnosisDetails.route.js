@@ -3,26 +3,26 @@
 
   $stateProvider
     .state('DiagnosisDetails', {
-      url: '/page12',
+      url: '/diagnosisDetails',
       abstract: true,
-      templateUrl: 'views/diagnosisDetails/diagnosisTabsController.html'
+      templateUrl: 'views/diagnosisDetails/diagnosisDetails.html'
     })
 
     .state('DiagnosisDetails.Details', {
-      url: '/page7',
+      url: '/details',
       views: {
-        'tab3': {
-          templateUrl: 'views/diagnosisDetails/diagnosisDetails.html',
+        'tab-details': {
+          templateUrl: 'views/diagnosisDetails/diagnosisDetails.details.html',
           controller: 'DiagnosisDetails.DetailsCtrl'
         }
       }
     })
 
     .state('DiagnosisDetails.DataPoints', {
-      url: '/page6',
+      url: '/dataPoints',
       views: {
-        'tab4': {
-          templateUrl: 'views/diagnosisDetails/dataPoints.html',
+        'tab-dataPoints': {
+          templateUrl: 'views/diagnosisDetails/diagnosisDetails.dataPoints.html',
           controller: 'DiagnosisDetails.DataPointsCtrl'
         }
       }

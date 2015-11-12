@@ -1,10 +1,10 @@
-<ion-view title="Diagnosis Details">
-    <ion-content padding="true" class="has-header">
-        <ion-list>
-            <ion-item>Data</ion-item>
-            <ion-item>More Data</ion-item>
-            <ion-item>Likelihood: 85%</ion-item>
-        </ion-list>
-        <a href="#/page2" class="button button-dark button-block  icon-right ion-ios-home">Home</a>
-    </ion-content>
+<ion-view title="Diagnosis Tabs Controller">
+    <ion-tabs class="tabs-stable tabs-icon-top">
+        <ion-tab title="Details" icon="ion-ios-information-outline" href="#/diagnosisDetails/details">
+            <ion-nav-view name="tab-details"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Data points" icon="ion-android-image" href="#/diagnosisDetails/dataPoints">
+            <ion-nav-view name="tab-dataPoints"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
 </ion-view>

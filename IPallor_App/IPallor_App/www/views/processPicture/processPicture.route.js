@@ -3,7 +3,7 @@
 
   $stateProvider
     .state('ProcessPicture', {
-      url: '/page8',
+      url: '/processPicture',
       templateUrl: 'views/processPicture/processPicture.html',
       controller: 'Process.PictureCtrl'
     });

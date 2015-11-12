@@ -3,7 +3,7 @@
 
   $stateProvider
     .state('ProcessSubmit', {
-      url: '/page10',
+      url: '/processSubmit',
       templateUrl: 'views/processSubmit/processSubmit.html',
       controller: 'Process.SubmitCtrl'
     });

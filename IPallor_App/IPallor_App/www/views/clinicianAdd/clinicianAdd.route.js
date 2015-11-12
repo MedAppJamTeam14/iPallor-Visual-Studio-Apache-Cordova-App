@@ -3,8 +3,8 @@
 
   $stateProvider
     .state('clinicianAdd', {
-      url: '/page9',
-      templateUrl: 'templates/addPatient.html',
+      url: '/clinicianAdd',
+      templateUrl: 'views/clinicianAdd/clinicianAdd.html',
       controller: 'Clinician.AddCtrl'
     });
 });
