@@ -1,0 +1,20 @@
+﻿angular.module('app')
+.factory('DiagnosisFactory', function (PatientFactory) {
+
+  var currentDiagnosis;
+
+  return {
+    getDiagnosisHistory: function () {
+      return PatientFactory.getCurrentPatient().diagnosisHistory;
+    },
+
+    selectDiagnosis: function (selectedDiagnosis) {
+      currentDiagnosis = selectedDiagnosis;
+    },
+
+    getCurrentDiagnosis: function () {
+      return currentDiagnosis;
+    }
+  };
+
+});

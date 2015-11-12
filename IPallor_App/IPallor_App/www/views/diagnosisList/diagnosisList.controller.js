@@ -1,4 +1,10 @@
 ﻿angular.module('app')
-.controller('DiagnosisListCtrl', function ($scope) {
+.controller('DiagnosisListCtrl', function (DiagnosisFactory) {
+
+  var vm = this;
+
+  angular.extend(vm, {
+    diagnosisHistory: DiagnosisFactory.getDiagnosisHistory()
+  });
 
 });

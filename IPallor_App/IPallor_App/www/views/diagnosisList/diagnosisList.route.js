@@ -5,6 +5,6 @@
     .state('DiagnosisList', {
       url: '/diagnosisList',
       templateUrl: 'views/diagnosisList/diagnosisList.html',
-      controller: 'DiagnosisListCtrl'
+      controller: 'DiagnosisListCtrl as vm'
     });
 });

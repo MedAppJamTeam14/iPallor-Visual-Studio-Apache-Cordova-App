@@ -1,8 +1,20 @@
 ﻿angular.module('app')
-.controller('DiagnosisDetails.DetailsCtrl', function ($scope) {
+.controller('DiagnosisDetails.DetailsCtrl', function (DiagnosisFactory) {
+
+  var vm = this;
+
+  angular.extend(vm, {
+    currentDiagnosis: DiagnosisFactory.getCurrentDiagnosis()
+  });
 
 })
 
-.controller('DiagnosisDetails.DataPointsCtrl', function ($scope) {
+.controller('DiagnosisDetails.DataPointsCtrl', function (DiagnosisFactory) {
+
+  var vm = this;
+
+  angular.extend(vm, {
+
+  });
 
 });

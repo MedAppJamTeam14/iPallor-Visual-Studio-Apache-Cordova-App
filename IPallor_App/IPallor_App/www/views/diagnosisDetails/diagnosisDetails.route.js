@@ -13,7 +13,7 @@
       views: {
         'tab-details': {
           templateUrl: 'views/diagnosisDetails/diagnosisDetails.details.html',
-          controller: 'DiagnosisDetails.DetailsCtrl'
+          controller: 'DiagnosisDetails.DetailsCtrl as vm'
         }
       }
     })
@@ -23,7 +23,7 @@
       views: {
         'tab-dataPoints': {
           templateUrl: 'views/diagnosisDetails/diagnosisDetails.dataPoints.html',
-          controller: 'DiagnosisDetails.DataPointsCtrl'
+          controller: 'DiagnosisDetails.DataPointsCtrl as vm'
         }
       }
     });
