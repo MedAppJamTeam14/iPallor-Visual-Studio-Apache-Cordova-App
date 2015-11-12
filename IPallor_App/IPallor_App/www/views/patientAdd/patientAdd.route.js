@@ -5,6 +5,6 @@
     .state('PatientAdd', {
       url: '/patientAdd',
       templateUrl: 'views/patientAdd/patientAdd.html',
-      controller: 'Patient.AddCtrl'
+      controller: 'Patient.AddCtrl as vm'
     });
 });

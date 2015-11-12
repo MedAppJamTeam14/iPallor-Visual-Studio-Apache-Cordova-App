@@ -1,10 +1,10 @@
 ﻿angular.module('app')
-.controller('Patient.ListCtrl', function (PatientFactory) {
+.controller('Patient.ListCtrl', function (PatientFactory, ClinicianFactory) {
 
   var vm = this;
 
   angular.extend(vm, {
-    patients: PatientFactory.getPatients(),
+    patients: ClinicianFactory.getPatientsUnderClinician(),
 
     selectPatient: PatientFactory.selectPatient
   });

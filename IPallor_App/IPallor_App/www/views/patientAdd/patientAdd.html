@@ -1,24 +1,50 @@
 <ion-view title="Add Patient">
     <ion-content padding="true" class="has-header">
-        <form class="list">
-            <label class="item item-input">
-                <input type="text" placeholder="name">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">First Name</span>
+                <input
+                    ng-model="formData.firstName"
+                    type="text"
+                    placeholder="John"
+                >
             </label>
-            <label class="item item-select">
-                <span class="input-label"></span>
-                <select>
-                    <option value="m">Male</option>
-                    <option value="f">Female</option>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Last Name</span>
+                <input
+                    ng-model="formData.lastName"
+                    type="text"
+                    placeholder="Suhr">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Age</span>
+                <input
+                    ng-model="formData.age"
+                    type="text"
+                    placeholder="25">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Phone</span>
+                <input
+                    ng-model="formData.phone"
+                    type="text"
+                    placeholder="123-456-7890">
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">Gender</span>
+                <select ng-model="formData.gender">
+                    <option value="Male" selected>Male</option>
+                    <option value="Female">Female</option>
                 </select>
             </label>
-            <label class="item item-input">
-                <input type="tel" placeholder="phone number">
-            </label>
-            <label class="item item-input">
-                <input type="email" placeholder="email">
-            </label>
-        </form>
-        <div class="spacer" style="width: 300px; height: 220px;"></div>
-        <a href="#/patientList" class="button button-balanced button-block ">Add Patient</a>
+        </div>
+        <div class="spacer" style="width: 300px; height: 150px;"></div>
+        <a
+            ng-click="vm.addPatient()"
+            href="#/patientList"
+            class="button button-balanced button-block"
+        >
+          Add Patient
+        </a>
     </ion-content>
 </ion-view>

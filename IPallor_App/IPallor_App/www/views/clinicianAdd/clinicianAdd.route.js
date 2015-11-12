@@ -5,6 +5,6 @@
     .state('clinicianAdd', {
       url: '/clinicianAdd',
       templateUrl: 'views/clinicianAdd/clinicianAdd.html',
-      controller: 'Clinician.AddCtrl'
+      controller: 'Clinician.AddCtrl as vm'
     });
 });

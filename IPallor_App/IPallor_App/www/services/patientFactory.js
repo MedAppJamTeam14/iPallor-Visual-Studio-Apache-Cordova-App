@@ -1,21 +1,6 @@
 ﻿angular.module('app')
 .factory('PatientFactory', function (ClinicianFactory) {
 
-  var patientsUnderClinicians = {
-    'John Doe': [
-      'Max Paulus',
-      'Van Nguyen'
-    ],
-    'Ivan the Terrible': [
-      'John Collins',
-      'Lewis Liu'
-    ],
-    'Mary Malpractice': [
-      'Matin Khoshnevis',
-      'Pasha Khosravi'
-    ]
-  };
-
   var patientData = {
     'Max Paulus': {
       name: 'Max Paulus',
@@ -58,18 +43,17 @@
   var currentPatient;
 
   return {
-    getPatients: function () {
-      var currentClinician = ClinicianFactory.getCurrentClinician();
-
-      return patientsUnderClinicians[currentClinician] || [];
-    },
-
     selectPatient: function (selectedPatient) {
       currentPatient = patientData[selectedPatient] || {};
     },
 
     getCurrentPatient: function () {
       return currentPatient;
+    },
+
+    addPatient: function (newPatient) {
+      patientData[newPatient.name] = newPatient;
+      ClinicianFactory.addPatientUnderClinician(newPatient.name);
     }
   }
 

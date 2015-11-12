@@ -1,24 +1,28 @@
 <ion-view title="Add Clinician">
-    <ion-content padding="true" class="has-header">
-        <form class="list">
-            <label class="item item-input">
-                <input type="text" placeholder="name">
-            </label>
-            <label class="item item-select">
-                <span class="input-label"></span>
-                <select>
-                    <option value="m">Male</option>
-                    <option value="f">Female</option>
-                </select>
-            </label>
-            <label class="item item-input">
-                <input type="tel" placeholder="phone number">
-            </label>
-            <label class="item item-input">
-                <input type="email" placeholder="email">
-            </label>
-        </form>
-        <div class="spacer" style="width: 300px; height: 220px;"></div>
-        <a href="#/clinicianAdd" class="button button-balanced button-block ">Add Clinician</a>
-    </ion-content>
+  <ion-content padding="true" class="has-header">
+      <div class="list">
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">First Name</span>
+              <input
+                  ng-model="formData.firstName"
+                  type="text"
+                  placeholder="John">
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Last Name</span>
+              <input
+                  ng-model="formData.lastName"
+                  type="text"
+                  placeholder="Suhr">
+          </label>
+      </div>
+      <div class="spacer" style="width: 300px; height: 350px;"></div>
+      <a
+          ng-click="vm.addClinician()"
+          href="#/clinicianList"
+          class="button button-balanced button-block"
+      >
+          Add Clinician
+      </a>
+  </ion-content>
 </ion-view>
