@@ -4,7 +4,9 @@
   var vm = this;
 
   angular.extend(vm, {
-    diagnosisHistory: DiagnosisFactory.getDiagnosisHistory()
+    diagnosisHistory: DiagnosisFactory.getDiagnosisHistory(),
+
+    selectDiagnosis: DiagnosisFactory.selectDiagnosis
   });
 
 });

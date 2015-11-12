@@ -3,6 +3,7 @@
         <ion-list>
             <ion-item
                 ng-repeat="diagnosis in vm.diagnosisHistory"
+                ng-click="vm.selectDiagnosis(diagnosis)"
                 href="#/diagnosisDetails/details"
             >
               {{ diagnosis.date.split('/').join(' / ') }}
