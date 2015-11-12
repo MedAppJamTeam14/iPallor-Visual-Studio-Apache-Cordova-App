@@ -3,44 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <!--
-        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
-        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
-    -->
-    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <title>IPallorApp</title>
 
-    <style>
-        .angular-google-map-container {
-            width: 100%;
-            height: 504px;
-        }
-    </style>
-
-    <!-- IPallorApp references -->
     <link href="css/ionic.css" rel="stylesheet">
-    <script src="scripts/ionic.bundle.js"></script>
     <link href="css/ionicons.min.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" />
 
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/routes.js"></script>
-    <script src="scripts/services.js"></script>
-    <script src="scripts/directives.js"></script>
 </head>
-<body  ng-app="app" animation="slide-left-right-ios7">
-    <div>
-        <div>
-            <ion-nav-bar class="bar-stable">
-                <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
-            </ion-nav-bar>
-            <ion-nav-view></ion-nav-view>
-        </div>
-    </div>
-    <!-- Cordova reference, this is added to your app when it's built. -->
+<body ng-app="app" animation="slide-left-right-ios7">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>'
+
+    <script src="lib/ionic.bundle.js"></script>
+    <script src="app.js"></script>
+    <script src="views/diagnosisDetails/diagnosisDetails.controller.js"></script>
+    <script src="views/diagnosisDetails/diagnosisDetails.route.js"></script>
+    <script src="views/diagnosisList/diagnosisList.controller.js"></script>
+    <script src="views/diagnosisList/diagnosisList.route.js"></script>
+    <script src="views/patientAdd/patientAdd.controller.js"></script>
+    <script src="views/patientAdd/patientAdd.route.js"></script>
+    <script src="views/patientDetails/patientDetails.controller.js"></script>
+    <script src="views/patientDetails/patientDetails.route.js"></script>
+    <script src="views/patientList/patientList.controller.js"></script>
+    <script src="views/patientList/patientList.route.js"></script>
+    <script src="views/processPicture/processPicture.controller.js"></script>
+    <script src="views/processPicture/processPicture.route.js"></script>
+    <script src="views/processSubmit/processSubmit.controller.js"></script>
+    <script src="views/processSubmit/processSubmit.route.js"></script>
+    <script src="services/services.js"></script>
+
     <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="lib/platformOverrides.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
