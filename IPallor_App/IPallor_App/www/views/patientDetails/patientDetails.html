@@ -14,9 +14,11 @@
                 <span class="input-label">Phone: {{ vm.currentPatient.phone }}</span>
             </label>
         </ion-list>
-        <a href="#/diagnosisList" class="button button-stable button-block  icon-right ion-android-clipboard">Diagnosis History</a>
+        <a href="#/diagnosisList" class="button button-balanced button-block  icon-right ion-android-clipboard">Diagnosis History</a>
         <a href="#/processPicture" class="button button-balanced button-block  icon-right ion-android-camera">Process Picture</a>
-        <div class="spacer" style="width: 300px; height: 106px;"></div>
-        <button class="button button-assertive button-block  icon-right ion-android-delete">Remove Patient</button>
     </ion-content>
+    <div class="bar bar-footer">
+      <a href="#/patientList" class="button button-royal icon-right ion-arrow-return-left">Switch Patients</a>
+      <button ng-click="vm.removePatient()" class="button button-assertive icon-right ion-android-delete">{{ vm.removePatientCaption }}</button>
+    </div>
 </ion-view>

@@ -78,6 +78,14 @@
       newPatient.diagnosisHistory = [];
       patientData[newPatient.name] = newPatient;
       ClinicianFactory.addPatientUnderClinician(newPatient.name);
+    },
+
+    deletePatient: function () {
+      var patientToDelete = currentPatient.name;
+
+      delete patientData[patientToDelete];
+      currentPatient = null;
+      ClinicianFactory.deletePatientUnderClinician(patientToDelete);
     }
   }
 

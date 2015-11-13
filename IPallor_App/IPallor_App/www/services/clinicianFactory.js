@@ -50,6 +50,12 @@
 
     addPatientUnderClinician: function (name) {
       patientsUnderClinicians[currentClinician].push(name);
+    },
+
+    deletePatientUnderClinician: function (name) {
+      var patientIndex = patientsUnderClinicians[currentClinician].indexOf(name);
+
+      patientsUnderClinicians[currentClinician].splice(patientIndex, 1);
     }
   }
 
