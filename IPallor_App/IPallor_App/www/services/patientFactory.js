@@ -7,20 +7,25 @@
       age: 21,
       gender: 'Male',
       phone: '949-555-1234',
+      recentDiagnosis: 'May have atrophy on left eye',
       diagnosisHistory: [
         {
+          eye : 'left',
           date: '10/25/15',
           likelihood: 85
         },
         {
+          eye: 'right',
           date: '9/14/15',
           likelihood: 80
         },
         {
+          eye: 'left',
           date: '3/6/15',
           likelihood: 75
         },
         {
+          eye: 'right',
           date: '11/25/14',
           likelihood: 70
         }
@@ -31,6 +36,7 @@
       age: 21,
       gender: 'Male',
       phone: '949-555-1234',
+      recentDiagnosis: 'May have atrophy on right eye',
       diagnosisHistory: []
     },
     'John Collins': {
@@ -38,6 +44,7 @@
       age: 21,
       gender: 'Male',
       phone: '949-555-1234',
+      recentDiagnosis: 'Healthy',
       diagnosisHistory: []
     },
     'Lewis Liu': {
@@ -45,6 +52,7 @@
       age: 21,
       gender: 'Male',
       phone: '949-555-1234',
+      recentDiagnosis: 'Healthy',
       diagnosisHistory: []
     },
     'Matin Khoshnevis': {
@@ -52,6 +60,7 @@
       age: 21,
       gender: 'Male',
       phone: '949-555-1234',
+      recentDiagnosis: 'Healthy',
       diagnosisHistory: []
     },
     'Pasha Khosravi': {
@@ -59,6 +68,7 @@
       age: 21,
       gender: 'Male',
       phone: '949-555-1234',
+      recentDiagnosis: 'Healthy',
       diagnosisHistory: []
     }
   };
