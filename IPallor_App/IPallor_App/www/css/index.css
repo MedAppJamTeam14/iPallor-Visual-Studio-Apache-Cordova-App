@@ -1,2 +1,7 @@
 ﻿body {
 }
+
+.item-input .patient-categories {
+    width: 100%;
+    white-space: normal;
+}

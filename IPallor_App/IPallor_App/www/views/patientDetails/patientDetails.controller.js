@@ -6,6 +6,14 @@
   angular.extend(vm, {
     currentPatient: PatientFactory.getCurrentPatient(),
 
+    categories: [
+        ['Name', 'name'],
+        ['Age', 'age'],
+        ['Gender', 'gender'],
+        ['Phone', 'phone'],
+        ['Recent Diagnosis', 'recentDiagnosis']
+    ],
+
     removePatientCaption: 'Remove Patient',
 
     removePatient: function () {

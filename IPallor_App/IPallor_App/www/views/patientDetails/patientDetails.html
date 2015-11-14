@@ -1,20 +1,8 @@
 <ion-view title="Patient Info">
     <ion-content padding="true" class="has-header">
         <ion-list>
-            <label class="item item-input">
-              <span class="input-label">Name: {{ vm.currentPatient.name }}</span>
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Age: {{ vm.currentPatient.age }}</span>
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Gender: {{ vm.currentPatient.gender }}</span>
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Phone: {{ vm.currentPatient.phone }}</span>
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Recent Diagnosis: {{ vm.currentPatient.recentDiagnosis }}</span>
+            <label ng-repeat="category in vm.categories" class="item item-input">
+              <span class="input-label patient-categories">{{ category[0] }}: {{ vm.currentPatient[category[1]] }}</span>
             </label>
         </ion-list>
         <a href="#/diagnosisList" class="button button-balanced button-block  icon-right ion-android-clipboard">Diagnosis History</a>
