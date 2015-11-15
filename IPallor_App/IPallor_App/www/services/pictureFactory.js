@@ -44,7 +44,7 @@
 
     createDiagnosis: function (diagnosisData) {
       var date = new Date();
-      currentPicture.date = date.getMonth() + '/' + date.getDay() + '/' + date.getFullYear();
+      currentPicture.date = (1 + date.getMonth()) + '/' + date.getDate() + '/' + date.getFullYear().toString().substr(2, 2);
       currentPicture.likelihood = 66;
       currentPicture.eye = diagnosisData.eye;
 

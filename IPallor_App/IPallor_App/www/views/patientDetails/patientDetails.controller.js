@@ -7,11 +7,11 @@
     currentPatient: PatientFactory.getCurrentPatient(),
 
     categories: [
-        ['Name', 'name'],
-        ['Age', 'age'],
-        ['Gender', 'gender'],
-        ['Phone', 'phone'],
-        ['Recent Diagnosis', 'recentDiagnosis']
+      ['Name', 'name'],
+      ['Age', 'age'],
+      ['Gender', 'gender'],
+      ['Phone', 'phone'],
+      ['Recent Diagnosis', 'recentDiagnosis']
     ],
 
     removePatientCaption: 'Remove Patient',
