@@ -5,6 +5,6 @@
     .state('ProcessPicture', {
       url: '/processPicture',
       templateUrl: 'views/processPicture/processPicture.html',
-      controller: 'Process.PictureCtrl'
+      controller: 'Process.PictureCtrl as vm'
     });
 });

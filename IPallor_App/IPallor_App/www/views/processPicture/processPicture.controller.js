@@ -5,6 +5,8 @@
 
     angular.extend(vm, {
         defaultPicture : "../../assets/images/donald_duck_zombie.jpg",
+        
+        currentPicture: '',
 
         addDataPoint: function () {
             console.log("added data point");
@@ -24,6 +26,7 @@
                     $("#procPic").panzoom({
                         increment: 0.5,
                         maxScale: 10,
+                        startTransform: 'rotate(90deg)',
                         $reset: $("#resetBtn")
                     });
                 },

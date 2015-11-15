@@ -3,10 +3,22 @@
         <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
             <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
         </div>
-        <div class="spacer" style="width: 300px; height: 170px;"></div>
+
+        <label class="item item-input item-select">
+            <span class="input-label">Eye</span>
+            <select ng-model="vm.eye">
+                <option selected>Left</option>
+                <option>Right</option>
+            </select>
+        </label>
+
         <div class="button-bar">
-            <a href="#/diagnosisDetails/details" class="button button-balanced button-block ">Confirm</a>
-            <a href="#/processPicture" class="button button-assertive button-block ">Cancel</a>
+            <a href="#/processPicture" class="button button-assertive button-block">Cancel</a>
+            <button
+                ng-click="vm.createDiagnosis()"
+                ng-disabled="vm.validateSubmit()"
+                class="button button-balanced button-block"
+            >Confirm</button>
         </div>
     </ion-content>
 </ion-view>

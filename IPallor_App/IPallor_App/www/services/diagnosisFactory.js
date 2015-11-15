@@ -14,6 +14,12 @@
 
     getCurrentDiagnosis: function () {
       return currentDiagnosis;
+    },
+
+    pushDiagnosis: function (newDiagnosis) {
+      PatientFactory.getCurrentPatient().diagnosisHistory.push(newDiagnosis);
+
+      currentDiagnosis = newDiagnosis;
     }
   };
 

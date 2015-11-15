@@ -5,6 +5,6 @@
     .state('ProcessSubmit', {
       url: '/processSubmit',
       templateUrl: 'views/processSubmit/processSubmit.html',
-      controller: 'Process.SubmitCtrl'
+      controller: 'Process.SubmitCtrl as vm'
     });
 });
