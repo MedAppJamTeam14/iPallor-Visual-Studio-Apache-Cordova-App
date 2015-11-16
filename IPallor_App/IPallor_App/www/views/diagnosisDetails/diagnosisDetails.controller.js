@@ -28,7 +28,7 @@
 		context = canvas.getContext("2d");
 		var imageObj = new Image();
 		imageObj.onload = function() {
-		  context.drawImage(imageObj, 0, 0);
+		  context.drawImage(imageObj, 0, 0, 160, 90);
 		  drawPoints(currentDiagnosis.dataPoints, 20);
 		};
 		imageObj.src = vm.src;
