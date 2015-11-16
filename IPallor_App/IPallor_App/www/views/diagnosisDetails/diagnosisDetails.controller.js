@@ -35,8 +35,8 @@
   
 	function drawPoints(points, size){
 		for(var i = 0; i < points.length; ++i){
-			var x = points[i].x - size / 2.0;
-			var y = points[i].y - size / 2.0;
+			var x = points[i].pos.x - size / 2.0;
+			var y = points[i].pos.y - size / 2.0;
 			
 			context.clearRect(0, 0, context.width, context.height);
 			context.beginPath();
