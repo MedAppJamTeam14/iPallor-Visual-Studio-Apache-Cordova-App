@@ -1,5 +1,5 @@
 ﻿angular.module('app')
-.controller('Process.PictureCtrl', function ($scope) {
+.controller('Process.PictureCtrl', function (PictureFactory) {
 
     var vm = this;
 
@@ -21,17 +21,18 @@
         try {
             navigator.camera.getPicture(
                 function (imageURI) {
-                    $("#procPic").src(imageURI);
+                  document.getElementById('processed-picture').src = imageURI;
+                    //$('processed-picture').panzoom({
+                    //  increment: 0.5,
+                    //  maxScale: 10,
+                    //  startTransform: 'rotate(90deg)',
+                    //  $reset: $("#resetBtn")
+                    //});
 
-                    $("#procPic").panzoom({
-                        increment: 0.5,
-                        maxScale: 10,
-                        startTransform: 'rotate(90deg)',
-                        $reset: $("#resetBtn")
-                    });
+                  PictureFactory.setPictureSource(imageURI);
                 },
                 function (err) {
-                    console.log(err);
+                  console.log(err);
                 });
         } catch (e) {
             console.log("Couldn't access camera. Using Default picture.");

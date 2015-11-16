@@ -14,7 +14,7 @@
   var vm = this;
 
   angular.extend(vm, {
-
+    src: DiagnosisFactory.getCurrentDiagnosis().src
   });
 
 });

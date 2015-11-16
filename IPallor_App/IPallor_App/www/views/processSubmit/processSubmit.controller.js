@@ -5,6 +5,7 @@
 
   angular.extend(vm, {
     eye: 'Left',
+    src: PictureFactory.getCurrentPicture().src,
 
     validateSubmit: PictureFactory.validateSubmit,
 

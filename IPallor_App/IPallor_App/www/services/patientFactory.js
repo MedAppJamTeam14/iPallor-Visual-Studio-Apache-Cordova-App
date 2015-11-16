@@ -12,22 +12,26 @@
         {
           eye : 'left',
           date: '10/25/15',
-          likelihood: 85
+          likelihood: 85,
+          src: ''
         },
         {
           eye: 'right',
           date: '9/14/15',
-          likelihood: 80
+          likelihood: 80,
+          src: ''
         },
         {
           eye: 'left',
           date: '3/6/15',
-          likelihood: 75
+          likelihood: 75,
+          src: ''
         },
         {
           eye: 'right',
           date: '11/25/14',
-          likelihood: 70
+          likelihood: 70,
+          src: ''
         }
       ]
     },
