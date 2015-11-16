@@ -24,10 +24,11 @@
   });
 
 	function init() {
-		canvas = document.getElementById("canvas");
+	  canvas = document.getElementById("canvasDataPoints");
 		context = canvas.getContext("2d");
 		var imageObj = new Image();
-		imageObj.onload = function() {
+		imageObj.onload = function () {
+		  console.log('does this ever happen');
 		  context.drawImage(imageObj, 0, 0, 300, 225);
 		  drawPoints(currentDiagnosis.dataPoints, 20);
 		};

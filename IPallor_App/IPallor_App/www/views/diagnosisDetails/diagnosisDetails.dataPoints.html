@@ -1,8 +1,6 @@
 <ion-view title="Data Points">
     <ion-content padding="true" class="has-header">
-        <div style="border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-				<canvas id="canvas" width="300" height="225"></canvas>
-		</div>
+				<canvas id="canvasDataPoints" width="300" height="225"></canvas>
         <div>
           <h3 ng-repeat="dataPoint in vm.dataPoints">{{ dataPoint.pos.x }}, {{ dataPoint.pos.y }}</h3>
         </div>

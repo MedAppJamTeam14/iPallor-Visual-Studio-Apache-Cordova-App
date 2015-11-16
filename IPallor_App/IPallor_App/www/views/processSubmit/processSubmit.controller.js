@@ -22,7 +22,7 @@
   });
 
   function init() {
-    canvas = document.getElementById("canvas");
+    canvas = document.getElementById("canvasSubmit");
     context = canvas.getContext("2d");
     var imageObj = new Image();
     imageObj.onload = function () {
