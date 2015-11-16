@@ -89,7 +89,7 @@
                   image.src = imageURI;
 
                   $(image).load(function () {
-                    vm.canvas.drawImage(image, 0, 0, 300, 300);
+                    vm.canvas.drawImage(image, 0, 0);
                   });
 
 
