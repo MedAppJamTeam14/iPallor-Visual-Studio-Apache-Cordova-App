@@ -1,0 +1,70 @@
+angular.module('app')
+.controller('Process.PictureCtrl', function ($scope) {
+
+    var vm = this;
+
+    angular.extend(vm, {
+        defaultPicture : "../../assets/images/donald_duck_zombie.jpg",
+        
+        currentPicture: '',
+
+        addDataPoint: function () {
+            console.log("added data point");
+        },
+
+        undoDataPoint: function () {
+            console.log("Undid data point");
+        }
+    });
+
+    var init = function () {
+        try {
+            navigator.camera.getPicture(
+                function (imageURI) {
+                    $("#procPic").src(imageURI);
+
+                    $("#procPic").panzoom({
+                        increment: 0.5,
+                        maxScale: 10,
+                        startTransform: 'rotate(90deg)',
+                        $reset: $("#resetBtn")
+                    });
+                },
+                function (err) {
+                    console.log(err);
+                });
+        } catch (e) {
+            console.log("Couldn't access camera. Using Default picture.");
+            document.getElementById("procPic").src = vm.defaultPicture; //default
+        }
+    };
+            
+            
+    var process = function(vein_one, vein_two, vein_three, vein_four, temp_disc, nasal_disc)){
+    
+    // model 1
+    var tempr = temp_disc.getRGB().r;
+    var tempg = temp_disc.getRGB().g;
+    var tempb = temp_disc.getRGB().b;
+    var nasalg = nasal_disc.getRGB().g;
+    var coeffs = [0.0627,-18.536,-1.662,0.003,13.5847];
+    var powers = [4.87,-1.1,1.366,2.2,0.0];
+    
+    var logy_model1 =  coeffs[0]*Math.pow(tempr, powers[0]) +
+                       coeffs[1]*Math.pow(nasalg, powers[1]) +
+                       coeffs[2]*Math.pow(tempg, powers[2]) +
+                       coeefs[3]*Math.pow(tempb, powers[3]) +
+                       coeffs[4];
+    
+    //var coeffs2 = [2.0415,0.159,-9.01439,5.574,-3.597];
+    //var logy_model2 =
+    var pallor_max = 1.0;
+    var pallor_min = 0.0;
+    
+    var diagnosis = (logy_model1 - pallor_min) / (pallor_max - pallor_min);
+    
+            
+    init();
+            
+            
+});
