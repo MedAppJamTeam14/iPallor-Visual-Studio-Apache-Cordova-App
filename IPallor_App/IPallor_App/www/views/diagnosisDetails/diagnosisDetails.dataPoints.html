@@ -1,8 +1,8 @@
 <ion-view title="Data Points">
     <ion-content padding="true" class="has-header">
 				<canvas id="canvasDataPoints" width="300" height="225"></canvas>
-        <div>
-          <h3 ng-repeat="dataPoint in vm.dataPoints">{{ dataPoint.pos.x }}, {{ dataPoint.pos.y }}</h3>
-        </div>
+        <li class="list" style="list-style-type: none">
+          <ul ng-repeat="dataPoint in vm.dataPoints">[{{ dataPoint.pos.x }}, {{ dataPoint.pos.y }}]</ul>
+        </li>
     </ion-content>
 </ion-view>
