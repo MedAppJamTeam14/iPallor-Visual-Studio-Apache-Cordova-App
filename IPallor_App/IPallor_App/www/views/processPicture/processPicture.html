@@ -1,36 +1,42 @@
 <ion-view title="Upload">
     <ion-content padding="true" class="has-header">
-        <div style="border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-            <canvas id="processed-picture" class="ion-image" height="225" width="300"></canvas>
-            <div class="button-bar">
-              <button ng-disabled="dataPoints > 4"
-                      ng-click="vm.addDataPoint()"
-                      class="button button-positive button-block">
-                Add data point
-              </button>
-              <button ng-disabled="dataPoints <= 0"
-                      ng-click="vm.undoDataPoint()"
-                      class="button button-assertive button-block ">
-                Undo
-              </button>
-            </div>
-            <div class="row">
-                <h3 class="col-33">R: {{ rgb.r }}</h3>
-                <h3 class="col-33">B: {{ rgb.g }}</h3>
-                <h3 class="col-33">G: {{ rgb.b }}</h3>
-            </div>
-            <div class="row">
-                <h3 class="col-50">X: {{ mousePos.x }}</h3>
-                <h3 class="col-50">Y: {{ mousePos.y }}</h3>
-            </div>
-            <div class="row">
-                <h3 class="col">Data Points: {{ dataPoints }}</h3>
-            </div>
+        <div ng-hide="photoChoice">
+            <button ng-click="vm.takePicture()" class="button button-positive" button-block>Take Picture</button>
+            <button ng-click="vm.chooseFromGallery()" class="button button-positive" button-block>Choose from Gallery</button>
         </div>
-        <!--<button id="resetBtn" class="button button-balanced button-block ">Reset Zoom</button>-->
-        <button 
-          ng-disabled="dataPoints !== 5"
-          ng-click="vm.navigateToSubmit()"
-          class="button button-balanced button-block">Submit</button>
+        <div ng-hide="!photoChoice">
+            <div style="border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
+                <canvas id="processed-picture" class="ion-image" height="225" width="300"></canvas>
+                <div class="button-bar">
+                  <button ng-disabled="dataPoints > 4"
+                          ng-click="vm.addDataPoint()"
+                          class="button button-positive button-block">
+                    Add data point
+                  </button>
+                  <button ng-disabled="dataPoints <= 0"
+                          ng-click="vm.undoDataPoint()"
+                          class="button button-assertive button-block ">
+                    Undo
+                  </button>
+                </div>
+                <div class="row">
+                    <h3 class="col-33">R: {{ rgb.r }}</h3>
+                    <h3 class="col-33">B: {{ rgb.g }}</h3>
+                    <h3 class="col-33">G: {{ rgb.b }}</h3>
+                </div>
+                <div class="row">
+                    <h3 class="col-50">X: {{ mousePos.x }}</h3>
+                    <h3 class="col-50">Y: {{ mousePos.y }}</h3>
+                </div>
+                <div class="row">
+                    <h3 class="col">Data Points: {{ dataPoints }}</h3>
+                </div>
+            </div>
+            <!--<button id="resetBtn" class="button button-balanced button-block ">Reset Zoom</button>-->
+            <button 
+              ng-disabled="dataPoints !== 5"
+              ng-click="vm.navigateToSubmit()"
+              class="button button-balanced button-block">Submit</button>
+        </div>
     </ion-content>
 </ion-view>

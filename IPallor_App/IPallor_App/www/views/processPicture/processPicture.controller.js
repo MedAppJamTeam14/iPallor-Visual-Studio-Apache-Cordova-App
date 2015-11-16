@@ -4,6 +4,7 @@
     var vm = this;
 
     var canvasElement = document.getElementById('processed-picture');
+    var canvas = canvasElement.getContext('2d');
 
     $scope.rgb = {
       r: 0,
@@ -18,9 +19,9 @@
 
     $scope.dataPoints = 0;
 
-    angular.extend(vm, {
-        canvas: canvasElement.getContext('2d'),
+    $scope.photoChoice = false;
 
+    angular.extend(vm, {
         addDataPoint: function () {
           PictureFactory.addDataPoint({
             rgb: $scope.rgb,
@@ -57,6 +58,60 @@
 
         navigateToSubmit: function () {
           $location.path('/processSubmit');
+        },
+
+        takePicture: function () {
+          try {
+              navigator.camera.getPicture(
+                  function (imageURI) {
+                    var image = new Image();
+                    image.src = imageURI;
+
+                    $(image).load(function () {
+                      canvas.drawImage(image, 0, 0, 300, 225);
+                    });
+
+                    document.getElementById('processed-picture').src = imageURI;
+                    PictureFactory.setPictureSource(imageURI);
+                    $scope.$apply(function () {
+                      $scope.photoChoice = true;
+                    });
+                  },
+                  function (err) {
+                    console.log(err);
+                  });
+          } catch (e) {
+              console.log("Couldn't access camera. Using Default picture.");
+              document.getElementById("procPic").src = vm.defaultPicture; //default
+          }
+        },
+
+        chooseFromGallery: function () {
+          try {
+              navigator.camera.getPicture(
+                  function (imageURI) {
+                    var image = new Image();
+                    image.src = imageURI;
+
+                    $(image).load(function () {
+                      canvas.drawImage(image, 0, 0, 300, 225);
+                    });
+
+                    document.getElementById('processed-picture').src = imageURI;
+                    PictureFactory.setPictureSource(imageURI);
+                    $scope.$apply(function () {
+                      $scope.photoChoice = true;
+                    });
+                  },
+                  function (err) {
+                    console.log(err);
+                  }, {
+                    quality: 100,
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+                  });
+          } catch (e) {
+              console.log("Couldn't access camera. Using Default picture.");
+          }
         }
     });
 
@@ -65,7 +120,7 @@
       var x = event.pageX - this.offsetLeft;
       var y = event.pageY -this.offsetTop;
       // getting image data and RGB values
-      var img_data = vm.canvas.getImageData(x, y, 1, 1).data;
+      var img_data = canvas.getImageData(x, y, 1, 1).data;
       var R = img_data[0];
       var G = img_data[1];
       var B = img_data[2];
@@ -81,36 +136,4 @@
       });
     });
 
-    var init = function () {
-        try {
-            navigator.camera.getPicture(
-                function (imageURI) {
-                  var image = new Image();
-                  image.src = imageURI;
-
-                  $(image).load(function () {
-                    vm.canvas.drawImage(image, 0, 0, 300, 225);
-                  });
-
-
-                  document.getElementById('processed-picture').src = imageURI;
-                    //$('processed-picture').panzoom({
-                    //  increment: 0.5,
-                    //  maxScale: 10,
-                    //  startTransform: 'rotate(90deg)',
-                    //  $reset: $("#resetBtn")
-                    //});
-
-                  PictureFactory.setPictureSource(imageURI);
-                },
-                function (err) {
-                  console.log(err);
-                });
-        } catch (e) {
-            console.log("Couldn't access camera. Using Default picture.");
-            document.getElementById("procPic").src = vm.defaultPicture; //default
-        }
-    };
-
-    init();
 });
