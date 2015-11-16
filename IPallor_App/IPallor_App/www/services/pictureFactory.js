@@ -36,12 +36,6 @@
       currentPicture.dataPoints.pop();
     },
 
-    validateSubmit: function () {
-      return currentPicture.src
-        && currentPicture.eye
-        && currentPicture.dataPoints.length === 5;
-    },
-
     createDiagnosis: function (diagnosisData) {
       var date = new Date();
       currentPicture.date = (1 + date.getMonth()) + '/' + date.getDate() + '/' + date.getFullYear().toString().substr(2, 2);

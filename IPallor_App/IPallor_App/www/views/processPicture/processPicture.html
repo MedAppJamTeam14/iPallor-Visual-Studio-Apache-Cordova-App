@@ -1,13 +1,34 @@
 <ion-view title="Upload">
     <ion-content padding="true" class="has-header">
         <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-            <img id="processed-picture" class="ion-image" style="width: 100%; height: 300px"/>
+            <canvas id="processed-picture" class="ion-image" style="width: 100%; height: 300px"></canvas>
+            <div class="row">
+                <h3 class="col-33">R: {{ rgb.r }}</h3>
+                <h3 class="col-33">B: {{ rgb.g }}</h3>
+                <h3 class="col-33">G: {{ rgb.b }}</h3>
+            </div>
+            <div class="row">
+                <h3 class="col-50">X: {{ mousePos.x }}</h3>
+                <h3 class="col-50">Y: {{ mousePos.y }}</h3>
+            </div>
+            <div class="row">
+                <h3 class="col">Data Points: {{ dataPoints }}</h3>
+            </div>
         </div>
         <!--<button id="resetBtn" class="button button-balanced button-block ">Reset Zoom</button>-->
         <div class="button-bar">
-            <button ng-click="vm.addDataPoint()" class="button button-positive button-block ">Add data point</button>
-            <button ng-click="vm.undoDataPoint()" class="button button-assertive button-block ">Undo</button>
+            <button
+              ng-disabled="dataPoints > 4"
+              ng-click="vm.addDataPoint()"
+              class="button button-positive button-block">Add data point</button>
+            <button
+              ng-disabled="dataPoints <= 0" 
+              ng-click="vm.undoDataPoint()"
+              class="button button-assertive button-block ">Undo</button>
         </div>
-        <a href="#/processSubmit" class="button button-balanced button-block">Submit</a>
+        <button 
+          ng-disabled="dataPoints !== 5"
+          ng-click="vm.navigateToSubmit()"
+          class="button button-balanced button-block">Submit</button>
     </ion-content>
 </ion-view>
