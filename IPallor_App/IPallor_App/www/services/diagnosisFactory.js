@@ -17,7 +17,7 @@
     },
 
     pushDiagnosis: function (newDiagnosis) {
-      PatientFactory.getCurrentPatient().diagnosisHistory.push(newDiagnosis);
+      PatientFactory.getCurrentPatient().diagnosisHistory.unshift(newDiagnosis);
 
       currentDiagnosis = newDiagnosis;
     }
