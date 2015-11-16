@@ -21,6 +21,33 @@
 
     $scope.photoChoice = false;
 
+    function redrawCanvas() {
+      var currPic = PictureFactory.getCurrentPicture();
+      var image = new Image();
+      console.log(currPic);
+      image.src = currPic.src;
+
+      $(image).load(function () {
+        canvas.drawImage(image, 0, 0, 300, 225);
+        drawPoints(currPic.dataPoints, 20);
+      });
+    }
+
+
+    function drawPoints(points, size) {
+      for (var i = 0; i < points.length; ++i) {
+        var x = points[i].pos.x -size / 2.0;
+        var y = points[i].pos.y -size / 2.0;
+
+        canvas.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.beginPath();
+        canvas.rect(x, y, size, size);
+        canvas.lineWidth = 2;
+        canvas.strokeStyle = 'black';
+        canvas.stroke();
+        }
+    }
+
     angular.extend(vm, {
         addDataPoint: function () {
           PictureFactory.addDataPoint({
@@ -40,11 +67,14 @@
             x: 0,
             y: 0
           };
+
+          redrawCanvas();
         },
 
         undoDataPoint: function () {
           --$scope.dataPoints;
           PictureFactory.removeDataPoint();
+          redrawCanvas();
         },
 
         getMousePos: function (canvas, evt) {
@@ -71,7 +101,7 @@
                       canvas.drawImage(image, 0, 0, 300, 225);
                     });
 
-                    document.getElementById('processed-picture').src = imageURI;
+                    //document.getElementById('processed-picture').src = imageURI;
                     PictureFactory.setPictureSource(imageURI);
                     $scope.$apply(function () {
                       $scope.photoChoice = true;
